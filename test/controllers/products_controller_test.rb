@@ -16,4 +16,21 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         assert_select '.tittle', 'PS4'
     end
 
+    test 'render a new product form' do
+        get new_product_path
+
+        assert_response :success
+        assert_select 'form'
+    end
+
+    test 'allow to create new product' do
+        post products_path, params: {
+            product: {
+                tittle: 'nintendo 64',
+                description: 'perfectas condiciones',
+                price: 45,
+            }
+         }
+         assert_redirected_to products_path
+    end
 end
