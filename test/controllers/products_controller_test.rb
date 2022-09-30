@@ -33,4 +33,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
          }
          assert_redirected_to products_path
     end
+
+    test 'dont allow to create new product with nill data' do
+        post products_path, params: {
+            product: {
+                tittle: '',
+                description: 'perfectas condiciones',
+                price: 45,
+            }
+         }
+         assert_response :unprocessable_entity
+    end
 end
