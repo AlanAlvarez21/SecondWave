@@ -38,9 +38,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
                 description: 'perfectas condiciones',
                 price: 45,
             }
-         }
-         assert_redirected_to products_path
-         assert_equal flash[:notice], 'Producto creado correctamente'
+        }
+        assert_redirected_to products_path
+        assert_equal flash[:notice], 'Producto creado correctamente'
     end
 
     test 'dont allow to create new product with nill data' do
@@ -50,7 +50,18 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
                 description: 'perfectas condiciones',
                 price: 45,
             }
-         }
-         assert_response :unprocessable_entity
+        }
+        assert_response :unprocessable_entity
     end
+
+    test 'allow to update a product' do
+        patch product_path(products(:ps4)), params: {
+            product: {
+                price: 50
+            }
+        }
+        assert_redirected_to products_path
+        assert_equal flash[:notice], 'Producto actualizado correctamente'
+    end
+
 end
