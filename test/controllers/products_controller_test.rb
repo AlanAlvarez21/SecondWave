@@ -23,6 +23,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         assert_select 'form'
     end
 
+
+    test 'render edit product form' do
+        get edit_product_path(products(:ps4))
+
+        assert_response :success
+        assert_select 'form'
+    end
+
     test 'allow to create new product' do
         post products_path, params: {
             product: {
