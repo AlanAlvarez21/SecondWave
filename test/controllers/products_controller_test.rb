@@ -32,6 +32,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
             }
          }
          assert_redirected_to products_path
+         assert_equal flash[:notice], 'Producto creado correctamente'
     end
 
     test 'dont allow to create new product with nill data' do
