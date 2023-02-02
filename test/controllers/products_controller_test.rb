@@ -34,8 +34,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       product: {
         tittle: 'nintendo 64',
         description: 'perfectas condiciones',
-        price: 45
-      }
+        price: 45,
+      },
     }
     assert_redirected_to products_path
     assert_equal flash[:notice], 'Producto creado correctamente'
@@ -46,8 +46,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       product: {
         tittle: '',
         description: 'perfectas condiciones',
-        price: 45
-      }
+        price: 45,
+      },
     }
     assert_response :unprocessable_entity
   end
@@ -55,10 +55,28 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to update a product' do
     patch product_path(products(:ps4)), params: {
       product: {
-        price: 50
-      }
+        price: 50,
+      },
     }
     assert_redirected_to products_path
     assert_equal flash[:notice], 'Producto actualizado correctamente'
+  end
+
+  test 'dont allow to update a product with incorrect data' do
+    patch product_path(products(:ps4)), params: {
+      product: {
+        price: nil,
+      },
+    }
+    assert_response :unprocessable_entity
+  end
+
+  test 'can delete a product' do
+    assert_difference('Product.count', -1) do
+      delete product_path(products(:ps4))
+    end
+
+    assert_redirected_to products_path
+    assert_equal flash[:notice], 'Tu producto se ha eliminado correctamente'
   end
 end

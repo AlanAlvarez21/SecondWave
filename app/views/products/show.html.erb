@@ -4,4 +4,7 @@
 
 <%= link_to 'Editar Producto', edit_product_path(@product) %>
 
+<%= link_to 'Eliminar Producto', product_path(@product), data: {
+    turbo_method: :delete
+} %>
 
