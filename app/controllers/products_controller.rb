@@ -3,11 +3,11 @@
 # Products Controller
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.with_attached_photo
   end
 
   def show
-    @product = Product.find(params[:id])
+    product
   end
 
   def new
@@ -25,11 +25,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    product
   end
 
   def update
-    @product = Product.find(params[:id])
+    product
 
     if @product.update(product_params)
       redirect_to products_path, notice: I18n.t('updated_product')
@@ -39,10 +39,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    product
     @product.destroy
     # :see_other -> indica un  303 redirect que no enlaza al producto en el que estabamos
     redirect_to products_path, notice: I18n.t('deleted_product'), status: :see_other
+  end
+
+  def product
+    @product = Product.find(params[:id])
   end
 
 private

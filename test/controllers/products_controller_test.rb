@@ -38,7 +38,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       },
     }
     assert_redirected_to products_path
-    assert_equal flash[:notice], 'Producto creado correctamente'
+    assert_equal flash[:notice], I18n.t('created_product')
   end
 
   test 'dont allow to create new product with nill data' do
@@ -59,7 +59,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       },
     }
     assert_redirected_to products_path
-    assert_equal flash[:notice], 'Producto actualizado correctamente'
+    assert_equal flash[:notice], I18n.t('updated_product')
   end
 
   test 'dont allow to update a product with incorrect data' do
@@ -77,6 +77,6 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to products_path
-    assert_equal flash[:notice], 'Tu producto se ha eliminado correctamente'
+    assert_equal flash[:notice], I18n.t('deleted_product')
   end
 end
