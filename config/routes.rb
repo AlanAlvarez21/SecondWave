@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,5 +13,4 @@ Rails.application.routes.draw do
   get '/products', to: 'products#index'
   get '/products/:id', to: 'products#show', as: :product
   get '/products/:id/edit', to: 'products#edit', as: :edit_product
-
 end
