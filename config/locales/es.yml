@@ -30,6 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  deleted_product: "Tu producto se ha eliminado correctamente"
-  updated_product: "Producto actualizado correctamente"
-  created_product: "Producto creado correctamente"
+  deleted_product: "Product deleted correctly"
+  updated_product: "Product updated correctly"
+  created_product: "Product created correctly"
