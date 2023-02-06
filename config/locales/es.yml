@@ -29,7 +29,38 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  deleted_product: "Product deleted correctly"
-  updated_product: "Product updated correctly"
-  created_product: "Product created correctly"
+es:
+  activerecord:
+    models:
+      product: Producto
+    attributes:
+      product:
+        title: 'Titulo'
+        description: 'Descripción'
+        price: 'Precio'
+        photo: 'Foto'
+    errors:
+      models:
+        product:
+          attributes:
+            tittle:
+              blank: 'Titulo no puede estar vacío'
+            price:
+              blank: 'Precio no puede estar vacío'
+            description:
+              blank: 'La descripción no puede estar vacía'
+  common:
+    confirm: '¿Estás Seguro?'
+  products:
+    edit:
+      title: 'Editar Producto'
+    new:
+      title: 'Añadir Producto'
+    index:
+      title: 'Productos:'
+    create:
+      created: 'Producto creado correctamente'
+    update:
+      updated: 'Producto creado correctamente'
+    destroy:
+      destroyed: 'Producto creado correctamente'

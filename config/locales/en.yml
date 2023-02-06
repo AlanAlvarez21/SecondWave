@@ -30,6 +30,37 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  deleted_product: "Tu producto se ha eliminado correctamente"
-  updated_product: "Producto actualizado correctamente"
-  created_product: "Producto creado correctamente"
+  activerecord:
+    models:
+      product: Product
+    attributes:
+      product:
+        title: 'Title'
+        description: 'Description'
+        price: 'Price'
+        photo: 'Photo'
+    errors:
+      models:
+        product:
+          attributes:
+            tittle:
+              blank: 'Titulo no puede estar vacío'
+            price:
+              blank: 'Precio no puede estar vacío'
+            description:
+              blank: 'La descripción no puede estar vacía'
+  common:
+    confirm: '¿Are you sure?'
+  products:
+    edit:
+      title: 'Edit Product'
+    new:
+      title: 'Add Product'
+    index:
+      title: 'Products:'
+    create:
+      created: 'Product created correctly'
+    update:
+      updated: 'Product updated correctly'
+    destroy:
+      deleted: 'Product deleted correctly'

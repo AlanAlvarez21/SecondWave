@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to products_path, notice: I18n.t('created_product')
+      redirect_to products_path, notice: t('.created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     product
 
     if @product.update(product_params)
-      redirect_to products_path, notice: I18n.t('updated_product')
+      redirect_to products_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     product
     @product.destroy
     # :see_other -> indica un  303 redirect que no enlaza al producto en el que estabamos
-    redirect_to products_path, notice: I18n.t('deleted_product'), status: :see_other
+    redirect_to products_path, notice: t('.deleted'), status: :see_other
   end
 
   def product

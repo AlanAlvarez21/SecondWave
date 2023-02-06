@@ -1,5 +1,6 @@
-require_relative 'boot'
+# frozen_string_literal: true
 
+require_relative 'boot'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -18,5 +19,11 @@ module Vendelo
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Available lenguages
+    config.i18n.available_locales = %i[es en]
+
+    # Default app lenaguage
+    config.i18n.default_locale = :es
   end
 end
