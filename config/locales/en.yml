@@ -64,3 +64,22 @@ en:
       updated: 'Product updated correctly'
     destroy:
       deleted: 'Product deleted correctly'
+  categories:
+    category:
+      edit: 'Edit'
+      delete: 'Delete'
+    index:
+      title: 'Categories'
+      new: 'Add Category'
+    edit:
+      title: 'Edit Category'
+    create:
+      created: 'Category was successfully created.'
+    update:
+      updated: 'Category was successfully updated.'
+    destroy:
+      destroyed: 'Category was successfully destroyed.'
+  shared:
+    header:
+      add: 'Add Product'
+      categories: 'Categories'
