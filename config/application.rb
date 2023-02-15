@@ -8,6 +8,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Vendelo
+  # Vendelo App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -25,5 +26,8 @@ module Vendelo
 
     # Default app lenaguage
     config.i18n.default_locale = :es
+
+    # Allow multiquery loading
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
