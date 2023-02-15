@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Categories Controller
 class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index

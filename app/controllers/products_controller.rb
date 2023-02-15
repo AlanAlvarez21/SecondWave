@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   def index
     @categories = Category.all.order(name: :asc).load_async
     @products = Product.all.with_attached_photo.order(created_at: :desc).load_async
+    # if category params is in the query params find the product by id category
+    @products = @products.where(category_id: params[:category_id]) if params[:category_id].present?
   end
 
   def show
