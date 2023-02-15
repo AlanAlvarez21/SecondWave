@@ -61,6 +61,8 @@ es:
     index:
       title: 'Productos:'
       all: 'Todos los productos'
+      min_price: 'Precio mínimo'
+      max_price: 'Precio máximo'
     create:
       created: 'Producto creado correctamente'
     update:

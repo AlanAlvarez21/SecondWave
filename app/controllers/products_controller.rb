@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     @products = Product.all.with_attached_photo.order(created_at: :desc).load_async
     # if category params is in the query params find the product by id category
     @products = @products.where(category_id: params[:category_id]) if params[:category_id].present?
+    @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
+    @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
   end
 
   def show
@@ -55,6 +57,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:tittle, :description, :price, :photo, :category_id,)
+    params.require(:product).permit(:tittle, :description, :price, :photo, :category_id)
   end
 end
