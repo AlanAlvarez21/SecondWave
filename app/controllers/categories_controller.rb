@@ -21,7 +21,9 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      format.html { redirect_to categories_url, notice: t('.created') }
+      respond_to do |format|
+        format.html { redirect_to categories_url, notice: t('.created') }
+      end
     else
       format.html { render :new, status: :unprocessable_entity }
     end
@@ -30,7 +32,9 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
     if category.update(category_params)
-      format.html { redirect_to categories_url, notice: t('.updated') }
+      respond_to do |format|
+        format.html { redirect_to categories_url, notice: t('.updated') }
+      end
     else
       format.html { render :edit, status: :unprocessable_entity }
     end
