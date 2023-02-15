@@ -63,6 +63,7 @@ en:
       all: 'All'
       min_price: 'Minimum price'
       max_price: 'Maximun price'
+      query_text: 'Search'
     create:
       created: 'Product created correctly'
     update:

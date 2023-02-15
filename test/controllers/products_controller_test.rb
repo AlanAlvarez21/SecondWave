@@ -25,6 +25,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h3', 'Macbook air'
   end
 
+  test 'filter a list of products filtered by query_text' do
+    get products_path(query_text: 'Macbook')
+
+    assert_response :success
+    assert_select '.product', 1
+    assert_select 'h3', 'Macbook air'
+  end
+
   test 'render a detailed product page' do
     get product_path(products(:ps4))
 

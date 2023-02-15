@@ -63,6 +63,7 @@ es:
       all: 'Todos los productos'
       min_price: 'Precio mínimo'
       max_price: 'Precio máximo'
+      query_text: 'Buscar'
     create:
       created: 'Producto creado correctamente'
     update:
