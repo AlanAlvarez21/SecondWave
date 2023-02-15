@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
@@ -5,7 +7,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path
 
     assert_response :success
-    assert_select '.product', 2
+    assert_select '.product', 3
   end
 
   test 'render a detailed product page' do
@@ -35,6 +37,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         tittle: 'nintendo 64',
         description: 'perfectas condiciones',
         price: 45,
+        category_id: categories(:videogames).id,
       },
     }
     assert_redirected_to products_path
