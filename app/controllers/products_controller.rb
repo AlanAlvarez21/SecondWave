@@ -3,7 +3,7 @@
 # Products Controller
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.with_attached_photo
+    @products = Product.all.with_attached_photo.order(created_at: :desc)
   end
 
   def show
