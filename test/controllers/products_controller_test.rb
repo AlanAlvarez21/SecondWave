@@ -53,7 +53,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get product_path(products(:ps4))
 
     assert_response :success
-    assert_select '.tittle', 'PS4'
+    assert_select '.title', 'PS4'
   end
 
   test 'render a new product form' do
@@ -73,7 +73,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to create new product' do
     post products_path, params: {
       product: {
-        tittle: 'nintendo 64',
+        title: 'nintendo 64',
         description: 'perfectas condiciones',
         price: 45,
         category_id: categories(:videogames).id
@@ -86,7 +86,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'dont allow to create new product with nill data' do
     post products_path, params: {
       product: {
-        tittle: '',
+        title: '',
         description: 'perfectas condiciones',
         price: 45
       }

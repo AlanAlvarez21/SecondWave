@@ -43,7 +43,7 @@ en:
       models:
         product:
           attributes:
-            tittle:
+            title:
               blank: 'Titulo no puede estar vacío'
             price:
               blank: 'Precio no puede estar vacío'

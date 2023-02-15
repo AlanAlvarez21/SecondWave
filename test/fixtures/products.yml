@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 ps4:
-  tittle: PS4
+  title: PS4
   description: buen estado
   price: 150
   category: videogames
 
 snes:
-  tittle: SNES
+  title: SNES
   description: super nintendo
   price: 100
   category: videogames
 
 air:
-  tittle: Macbook air
+  title: Macbook air
   description: Le falla la batería
   price: 250
   category: computers
