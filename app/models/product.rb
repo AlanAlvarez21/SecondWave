@@ -12,4 +12,10 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   belongs_to :category
+
+  ORDER_BY = {
+    newest: 'created_at DESC',
+    expensive: 'price DESC',
+    chepeast: 'price ASC',
+  }.freeze
 end

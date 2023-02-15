@@ -33,6 +33,22 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h3', 'Macbook air'
   end
 
+  test 'order a list of products filtered by price ASC ' do
+    get products_path(order_by: 'expensive')
+
+    assert_response :success
+    assert_select '.product', 3
+    assert_select '.products .product:first-child h3', 'Macbook air'
+  end
+
+  test 'order a list of products filtered by price DESC ' do
+    get products_path(order_by: 'chepeast')
+
+    assert_response :success
+    assert_select '.product', 3
+    assert_select '.products .product:first-child h3', 'SNES'
+  end
+
   test 'render a detailed product page' do
     get product_path(products(:ps4))
 
