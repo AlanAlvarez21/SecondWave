@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Application Controller
 class ApplicationController < ActionController::Base
   around_action :switch_locale
 
@@ -8,7 +9,7 @@ class ApplicationController < ActionController::Base
     I18n.with_locale(locale_from_header, &action)
   end
 
-private
+  private
 
   # Lee cabezera que se manda en la petición
   def locale_from_header
