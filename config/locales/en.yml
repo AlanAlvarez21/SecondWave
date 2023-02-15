@@ -43,7 +43,7 @@ en:
       models:
         product:
           attributes:
-            tittle:
+            title:
               blank: 'Titulo no puede estar vacío'
             price:
               blank: 'Precio no puede estar vacío'
@@ -61,6 +61,12 @@ en:
     index:
       title: 'Products:'
       all: 'All'
+      min_price: 'Minimum price'
+      max_price: 'Maximun price'
+      query_text: 'Search'
+      expensive: 'The most expesive'
+      chepeast: 'The chepeast'
+      newest: 'Newest'
     create:
       created: 'Product created correctly'
     update:
