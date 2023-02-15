@@ -49,6 +49,8 @@ en:
               blank: 'Precio no puede estar vacío'
             description:
               blank: 'La descripción no puede estar vacía'
+            category:
+              blank: 'La categoría no puede estar vacía'
   common:
     confirm: '¿Are you sure?'
   products:
@@ -63,7 +65,7 @@ en:
     update:
       updated: 'Product updated correctly'
     destroy:
-      deleted: 'Product deleted correctly'
+      destoyed: 'Product deleted correctly'
   categories:
     category:
       edit: 'Edit'

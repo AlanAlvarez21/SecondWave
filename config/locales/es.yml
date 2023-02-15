@@ -49,6 +49,8 @@ es:
               blank: 'Precio no puede estar vacío'
             description:
               blank: 'La descripción no puede estar vacía'
+            category:
+              required: 'La categoría no puede estar vacía'
   common:
     confirm: '¿Estás Seguro?'
   products:
