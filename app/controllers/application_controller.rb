@@ -2,6 +2,8 @@
 
 # Application Controller
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   around_action :switch_locale
 
   # En cada petición se llama esté método para cambiar idioma de app para esa petición en concreto
