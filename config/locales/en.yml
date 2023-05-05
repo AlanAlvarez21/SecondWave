@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  app_name: Vendelo
+  meta_title: Buy and sell second hand products
   activerecord:
     models:
       product: Product
