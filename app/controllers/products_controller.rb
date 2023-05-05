@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
     @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
     @products = @products.search_full_text(params[:query_text]) if params[:query_text].present?
     @products = @products.order(order_by).load_async
+
+    @pagy, @products = pagy_countless(@products, items: 12)
   end
 
   def order_by
