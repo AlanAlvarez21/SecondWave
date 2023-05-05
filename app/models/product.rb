@@ -5,7 +5,7 @@ class Product < ApplicationRecord
 
   pg_search_scope :search_full_text, against: {
     title: 'A',
-    description: 'B',
+    description: 'B'
   }
   has_one_attached :photo
   validates :title, presence: true
@@ -16,6 +16,6 @@ class Product < ApplicationRecord
   ORDER_BY = {
     newest: 'created_at DESC',
     expensive: 'price DESC',
-    chepeast: 'price ASC',
+    chepeast: 'price ASC'
   }.freeze
 end

@@ -21,7 +21,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(min_price: 160, max_price: 300)
 
     assert_response :success
-    assert_select '.product', 4
+    assert_select '.product', 11
     assert_select 'h3', 'Nintendo Switch'
   end
 
