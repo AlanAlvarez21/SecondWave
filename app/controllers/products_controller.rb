@@ -2,17 +2,9 @@
 
 # Products Controller
 class ProductsController < ApplicationController
-  def index # rubocop:disable Metrics/AbcSize
-    @categories = Category.all.order(name: :asc).load_async
-    @products = Product.all.with_attached_photo
-    # if category params is in the query params find the product by id category
-    @products = @products.where(category_id: params[:category_id]) if params[:category_id].present?
-    @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
-    @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
-    @products = @products.search_full_text(params[:query_text]) if params[:query_text].present?
-    @products = @products.order(order_by).load_async
-
-    @pagy, @products = pagy_countless(@products, items: 12)
+  def index
+    @categories = Category.order(name: :asc).load_async
+    @pagy, @products = pagy_countless(FindProducts.new.call(params).load_async, items: 12)
   end
 
   def order_by
