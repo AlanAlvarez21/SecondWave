@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Category < ApplicationRecord
-  has_many :products, dependent: :restrict_with_exception
+  validates :name, presence: true
 
-  def initialize(params = {})
-    super(params)
-  end
+  has_many :products, dependent: :restrict_with_exception
 end
