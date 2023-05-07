@@ -53,8 +53,21 @@ en:
               blank: 'La descripción no puede estar vacía'
             category:
               blank: 'La categoría no puede estar vacía'
+        user:
+          attributes:
+            username:
+              blank: 'Username no puede estar vacío'
+              too_short: Username must have between 3 and 8 characters
+              blank: 'Email no puede estar vacío'
+            password:
+              blank: 'El password no puede estar vacío'
+              too_short: Password must have between 3 and 8 characters
   common:
     confirm: '¿Are you sure?'
+  authentication:
+    users:
+      create:
+        created: User created successfully
   products:
     edit:
       title: 'Edit Product'
