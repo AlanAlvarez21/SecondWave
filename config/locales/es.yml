@@ -65,6 +65,8 @@ es:
               too_short: El password debe tener entré 3 y 8 caracteres
   common:
     confirm: '¿Estás Seguro?'
+    back: 'Regresar'
+    not_logged_in: 'Tienes que hacer login o crear una cuenta'
   authentication:
     users:
       create:

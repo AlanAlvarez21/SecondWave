@@ -3,6 +3,11 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    login
+    @category = categories(:clothes)
+  end
+
   test 'should get index list of categories' do
     get categories_url
 
@@ -17,7 +22,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create category' do
     assert_difference('Category.count') do
-      post categories_url, params: { category: { name: 'Computers' } }
+      post categories_url, params: { category: { name: @category.name } }
     end
 
     assert_redirected_to categories_url
