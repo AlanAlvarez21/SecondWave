@@ -69,6 +69,10 @@ es:
     users:
       create:
         created: Usuario creado correctamente
+    sessions:
+      create:
+        created: Bienvenido
+        failed: Login invalido
   products:
     edit:
       title: 'Editar Producto'
@@ -83,7 +87,6 @@ es:
       expensive: 'Más caro'
       chepeast: 'Más barato'
       newest: 'Más nuevo'
-
     create:
       created: 'Producto creado correctamente'
     update:

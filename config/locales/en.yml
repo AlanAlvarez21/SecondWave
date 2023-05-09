@@ -68,6 +68,10 @@ en:
     users:
       create:
         created: User created successfully
+    sessions:
+      create:
+        created: Welcome
+        failed: Invalid login
   products:
     edit:
       title: 'Edit Product'
