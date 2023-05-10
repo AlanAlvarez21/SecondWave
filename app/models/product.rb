@@ -21,4 +21,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :category
+
+  #assigns the current user by default to the product
+  belongs_to :user, default: -> { Current.user }
 end

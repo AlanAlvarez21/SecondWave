@@ -16,6 +16,7 @@ class User < ApplicationRecord
                          message: :invalid
                        }
   validates :password, length: { minimum: 8 }
+  has_many :products, dependent: :destroy
 
   before_save :downcase_attributes
 

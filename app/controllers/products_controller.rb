@@ -22,6 +22,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # @product = Current.user.products.new(product_params) replaced by belongs_to :user, default: -> { Current.user }
+    # in products model
+
     @product = Product.new(product_params)
 
     if @product.save
@@ -59,6 +62,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :photo, :category_id)
+    @product_params = params.require(:product).permit(:title, :description, :price, :photo, :category_id, :user)
   end
 end
