@@ -35,12 +35,20 @@ en:
   activerecord:
     models:
       product: Product
+      user: User
+      category: Category
     attributes:
       product:
         title: 'Title'
         description: 'Description'
         price: 'Price'
         photo: 'Photo'
+      user:
+        email: Email
+        username: User Name
+        password: Password
+      category:
+        name: Name
     errors:
       models:
         product:
@@ -74,6 +82,8 @@ en:
       create:
         created: Welcome
         failed: Invalid login
+      destroy:
+        destroyed: User Logout
   products:
     edit:
       title: 'Edit Product'
@@ -113,3 +123,6 @@ en:
     header:
       add: 'Add Product'
       categories: 'Categories'
+      login: 'Access'
+      register: 'Register'
+      logout: 'Logout'

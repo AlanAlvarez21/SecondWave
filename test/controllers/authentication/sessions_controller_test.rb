@@ -29,5 +29,12 @@ module Authentication
 
       assert_redirected_to products_url
     end
+
+    test 'should logout' do
+      login
+
+      delete session_url_to products_url
+      assert_equal flash[:notice], 'Usuario deslogueado'
+    end
   end
 end

@@ -35,12 +35,20 @@ es:
   activerecord:
     models:
       product: Producto
+      user: Usuario
+      category: Categoría
     attributes:
       product:
         title: 'Titulo'
         description: 'Descripción'
         price: 'Precio'
         photo: 'Foto'
+      user:
+        email: Correo electrónico
+        username: Nombre de Usuario
+        password: Contraseña
+      category:
+        name: Nombre
     errors:
       models:
         product:
@@ -75,6 +83,8 @@ es:
       create:
         created: Bienvenido
         failed: Login invalido
+      destroy:
+        destroyed: Usuario deslogueado
   products:
     edit:
       title: 'Editar Producto'
@@ -114,3 +124,6 @@ es:
     header:
       add: 'Añadir Producto'
       categories: 'Categorias'
+      login: 'Acceso'
+      register: 'Registro'
+      logout: 'Salir'
