@@ -2,6 +2,7 @@
 paco:
   username: paco16
   email: <%= Faker::Internet.email %>
+  admin: true
   password_digest: <%= BCrypt::Password.create('password', cost: 5) %>
 
 alan:
