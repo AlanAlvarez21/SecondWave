@@ -15,7 +15,7 @@ class User < ApplicationRecord
                          with: /\A+[a-z0-9A-Z]+\z/,
                          message: :invalid
                        }
-  validates :password, length: { minimum: 8 }
+  # validates :password, length: { minimum: 3 }
   has_many :products, dependent: :destroy
 
   before_save :downcase_attributes
