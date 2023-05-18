@@ -24,4 +24,8 @@ class Product < ApplicationRecord
 
   #assigns the current user by default to the product
   belongs_to :user, default: -> { Current.user }
+
+  def owner?
+    user_id == Current.user.id
+  end
 end

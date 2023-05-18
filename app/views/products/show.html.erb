@@ -3,10 +3,10 @@
     <p><%= @product.description %></p>
     <span><%= @product.price %>$</span>
 
-<%= link_to 'Editar Producto', edit_product_path(@product) if @product.user == Current.user %>
+<%= link_to 'Editar Producto', edit_product_path(@product) if @product.owner? %>
 
 <%= link_to 'Eliminar Producto', product_path(@product), data: {
     turbo_method: :delete,
     turbo_confirm: t('common.confirm')
-} if @product.user == Current.user %>
+} if @product.owner? %>
 
