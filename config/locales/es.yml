@@ -100,6 +100,10 @@ es:
       expensive: 'Más caro'
       chepeast: 'Más barato'
       newest: 'Más nuevo'
+    show:
+      edit: 'Editar producto'
+      delete: 'Eliminar producto'
+      view_more_products: 'ver más productos de %{username}'
     create:
       created: 'Producto creado correctamente'
     update:
