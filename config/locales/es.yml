@@ -75,6 +75,7 @@ es:
     confirm: '¿Estás Seguro?'
     back: 'Regresar'
     not_logged_in: 'Tienes que hacer login o crear una cuenta'
+    not_authorized: 'No tienes permisos para está acción'
   authentication:
     users:
       create:
@@ -99,6 +100,10 @@ es:
       expensive: 'Más caro'
       chepeast: 'Más barato'
       newest: 'Más nuevo'
+    show:
+      edit: 'Editar producto'
+      delete: 'Eliminar producto'
+      view_more_products: 'ver más productos de %{username}'
     create:
       created: 'Producto creado correctamente'
     update:

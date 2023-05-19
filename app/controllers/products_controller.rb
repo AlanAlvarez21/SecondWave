@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    authorize! product
     product
   end
 
@@ -35,6 +36,7 @@ class ProductsController < ApplicationController
   end
 
   def update
+    authorize! product
     product
 
     if @product.update(product_params)
@@ -45,6 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    authorize! product
     product
     @product.destroy
     # :see_other -> indica un  303 redirect que no enlaza al producto en el que estabamos

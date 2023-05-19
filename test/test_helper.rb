@@ -13,7 +13,7 @@ module ActiveSupport
     fixtures :all
 
     def login
-      post sessions_path, params: { login: 'alan123', password: 'testme' }
+      post sessions_path, params: { login: 'paco16', password: 'testme' }
     end
   end
 end

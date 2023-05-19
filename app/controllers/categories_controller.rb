@@ -2,12 +2,13 @@
 
 # Categories Controller
 class CategoriesController < ApplicationController
+  before_action :authorize!
   def index
     @categories = Category.all.order(name: :asc)
   end
 
   def new
-    @category = Category.new
+    @category = Category.news
   end
 
   def edit

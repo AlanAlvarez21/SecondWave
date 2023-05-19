@@ -74,6 +74,8 @@ en:
     confirm: '¿Are you sure?'
     back: 'Go back'
     not_logged_in: 'You have to login or create an account'
+    not_authorized: 'You dont have permissions'
+    not_found: 'Not found'
   authentication:
     users:
       create:
@@ -98,6 +100,10 @@ en:
       expensive: 'The most expesive'
       chepeast: 'The chepeast'
       newest: 'Newest'
+    show:
+      edit: 'Edit product'
+      delete: 'Delete product'
+      view_more_products: 'view more products of %{username}'
     create:
       created: 'Product created correctly'
     update:
