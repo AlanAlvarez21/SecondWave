@@ -76,6 +76,7 @@ es:
     back: 'Regresar'
     not_logged_in: 'Tienes que hacer login o crear una cuenta'
     not_authorized: 'No tienes permisos para está acción'
+    not_found: 'No se ha encontrado'
   authentication:
     users:
       create:

@@ -7,8 +7,7 @@ module Authentication
     # se salta esté método del callback
     skip_before_action :protect_pages
 
-    def new
-    end
+    def new; end
 
     def create
       @user = User.find_by('email = :login OR username = :login', { login: params[:login] })
