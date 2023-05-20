@@ -125,10 +125,14 @@ en:
       updated: 'Category was successfully updated.'
     destroy:
       destroyed: 'Category was successfully destroyed.'
+  favorites:
+    index:
+      title: 'My Favorites'
   shared:
     header:
       add: 'Add Product'
       categories: 'Categories'
+      favorites: 'Favorites'
       login: 'Access'
       register: 'Register'
       logout: 'Logout'

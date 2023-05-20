@@ -2,6 +2,11 @@
 
 # Favorites Controller
 class FavoritesController < ApplicationController
+
+  def index
+
+  end
+
   def create
     # Favorite.create(product: product, user: Current.user) es lo mismo que la siguiente línea pero aprovechando el scoping
     # product.favorites.create(user: Current.user)

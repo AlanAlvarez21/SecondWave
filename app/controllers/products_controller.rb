@@ -61,10 +61,10 @@ class ProductsController < ApplicationController
   private
 
   def product_params_index
-    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page)
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page, :favorites, :locale)
   end
 
   def product_params
-    @product_params = params.require(:product).permit(:title, :description, :price, :photo, :category_id, :user)
+    @product_params = params.require(:product).permit(:title, :description, :price, :photo, :category_id, :user, :locale)
   end
 end

@@ -126,10 +126,14 @@ es:
       updated: 'Categoria actualizada correctamente'
     destroy:
       destroyed: 'Categoria eliminada correctamente'
+  favorites:
+    index:
+      title: 'Mis Favoritos'
   shared:
     header:
       add: 'Añadir Producto'
       categories: 'Categorias'
+      favorites: 'Favoritos'
       login: 'Acceso'
       register: 'Registro'
       logout: 'Salir'
