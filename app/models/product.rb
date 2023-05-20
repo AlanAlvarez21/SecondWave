@@ -2,6 +2,7 @@
 
 class Product < ApplicationRecord
   include PgSearch::Model
+  include Favoritable
 
   pg_search_scope :search_full_text, against: {
     title: 'A',
