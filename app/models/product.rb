@@ -15,6 +15,7 @@ class Product < ApplicationRecord
   }.freeze
 
   has_one_attached :photo
+  has_many :favorites, dependent: :destroy
 
   validates :title, presence: true
   validates :price, presence: true
@@ -22,7 +23,7 @@ class Product < ApplicationRecord
 
   belongs_to :category
 
-  #assigns the current user by default to the product
+  # assigns the current user by default to the product
   belongs_to :user, default: -> { Current.user }
 
   def owner?

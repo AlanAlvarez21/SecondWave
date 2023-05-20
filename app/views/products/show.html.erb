@@ -13,3 +13,6 @@
     turbo_confirm: t('common.confirm')
 } if @product.owner? %>
 
+<%= link_to '❤️', favorites_path(product_id: @product.id), data: {
+    turbo_method: :post,
+} %>

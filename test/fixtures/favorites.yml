@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+paco_snes:
+  user: paco
+  product: snes
+
+alan_ps4:
+  user: alan
+  product: ps4
