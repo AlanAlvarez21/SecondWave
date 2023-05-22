@@ -1,21 +1,22 @@
 # frozen_string_literal: true
 
+# Module to attach a favorite to a user
 module Favoritable
-    extend ActiveSupport::Concern
+  extend ActiveSupport::Concern
 
-    included do
-        has_many :favorites, dependent: :destroy
+  included do
+    has_many :favorites, dependent: :destroy
 
-        def favorite!
-            favorites.create(user: Current.user)
-        end
-
-        def unfavorite!
-            favorite.destroy
-        end
-
-        def favorite
-            favorites.find_by(user: Current.user)
-        end
+    def favorite!
+      favorites.create(user: Current.user)
     end
+
+    def unfavorite!
+      favorite.destroy
+    end
+
+    def favorite
+      favorites.find_by(user: Current.user)
+    end
+  end
 end

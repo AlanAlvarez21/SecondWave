@@ -63,6 +63,6 @@ class FindProducts
   def filter_by_favorites(scoped, favorites)
     return scoped unless favorites.present?
 
-    scoped.joins(:favorites).where( { favorites: { user_id: Current.user.id } } )
+    scoped.joins(:favorites).where({ favorites: { user_id: Current.user.id } })
   end
 end
