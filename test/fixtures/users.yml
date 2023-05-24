@@ -3,19 +3,25 @@ paco:
   username: paco16
   email: <%= Faker::Internet.email %>
   admin: true
-  password_digest: <%= BCrypt::Password.create('password', cost: 5) %>
+  password_digest:  <%= BCrypt::Password.create('1234567890', cost: 5) %>
 
 alan:
   username: alan123
   email: <%= Faker::Internet.email %>
-  password_digest: <%= BCrypt::Password.create('password', cost: 5) %>
+  admin: true
+  password_digest:  <%= BCrypt::Password.create('1234567890', cost: 5) %>
 
 maria:
   username: maria123
   email: <%= Faker::Internet.email %>
-  password_digest: <%= BCrypt::Password.create('password', cost: 5) %>
+  password_digest:  <%= BCrypt::Password.create('1234567890', cost: 5) %>
 
 user4:
-  username: <%= Faker::Name.name %>
+  username: user4
   email: <%= Faker::Internet.email %>
-  password_digest: <%= BCrypt::Password.create('password', cost: 5) %>
+  password_digest:  <%= BCrypt::Password.create('1234567890', cost: 5) %>
+
+user5:
+  username: user5
+  email: <%= Faker::Internet.email %>
+  password_digest:  <%= BCrypt::Password.create('1234567890', cost: 5) %>
