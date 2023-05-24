@@ -16,7 +16,7 @@
                 ', value: params[:max_price], class: 'w-1/3 rounded-2xl border-gray-200 mx-2' %>
 
             <%= form.select :order_by, options_for_select(Product::ORDER_BY.keys.map{ |order| [t(".#{order}"), order] }, params[:order_by]), {},
-                { onChange: 'this.form.requestSubmit()', value: params[:orderb_by], class: 'w-1/3 rounded-2xl border-gray-200' } %>
+                { onChange: 'this.form.requestSubmit()', value: params[:orderb_by], class: 'w-1/3 rounded-2xl border-gray-200 text-gray-500'  } %>
         </div>
     <% end %>
 
@@ -29,10 +29,10 @@
     
      <%# Render de las categorías %>
     <%= turbo_frame_tag :products, class: 'products flex m-2'  do %>
-        <%= turbo_frame_tag "products-#{@pagy.page}", class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap' do %>
+        <%= turbo_frame_tag "products-#{@pagy.page}", class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2' do %>
             <%= render partial: 'product', collection: @products %>
             <%= turbo_frame_tag "products-#{@pagy.next}", class: 'products', src:
-            pagy_url_for(@pagy, @pagy.next), class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap', loading: :lazy if @pagy.next %>
+            pagy_url_for(@pagy, @pagy.next), class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2', loading: :lazy if @pagy.next %>
         <% end %>
     <% end %>
 <% end %>
