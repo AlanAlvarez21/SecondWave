@@ -14,7 +14,7 @@ module Authentication
 
       if @user&.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to products_path, alert: t('.created')
+        redirect_to products_path, notice: t('.created')
       else
         redirect_to new_session_path, alert: t('.failed')
       end

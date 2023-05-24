@@ -1,16 +1,18 @@
-<h1 class="title"><%= @product.title %></h1>
-    <%= image_tag @product.photo, width: 200 if @product.photo.attached? %>
-    <p><%= @product.description %></p>
-    <span><%= @product.price %>$</span>
+<div class=''>
+    <h1 class="title"><%= @product.title %></h1>
+        <%= image_tag @product.photo, width: 200 if @product.photo.attached? %>
+        <p><%= @product.description %></p>
+        <span><%= @product.price %>$</span>
 
-<%= link_to 'Editar Producto', edit_product_path(@product) if @product.owner? %>
+    <%= link_to 'Editar Producto', edit_product_path(@product) if @product.owner? %>
 
-<%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
+    <%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
 
 
-<%= link_to '.delete', product_path(@product), data: {
-    turbo_method: :delete,
-    turbo_confirm: t('common.confirm')
-} if @product.owner? %>
+    <%= link_to '.delete', product_path(@product), data: {
+        turbo_method: :delete,
+        turbo_confirm: t('common.confirm')
+    } if @product.owner? %>
 
-<%= render partial: 'favorite', locals: { product: @product } %>
+    <%= render partial: 'favorite', locals: { product: @product } %>
+</div>

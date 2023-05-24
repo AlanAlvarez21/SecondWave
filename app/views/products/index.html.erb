@@ -27,7 +27,7 @@
         <%= render partial: 'category', collection: @categories %>
     </div>
     
-     <%# Render de las categorías %>
+     <%# Render de los productos %>
     <%= turbo_frame_tag :products, class: 'products flex m-2'  do %>
         <%= turbo_frame_tag "products-#{@pagy.page}", class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2' do %>
             <%= render partial: 'product', collection: @products %>
