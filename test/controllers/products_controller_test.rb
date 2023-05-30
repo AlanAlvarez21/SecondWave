@@ -11,6 +11,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path
 
     assert_response :success
+    assert_select '.category', 10
     assert_select '.product', 12
   end
 
@@ -118,7 +119,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'can delete a product' do
-    assert_difference('Product.count', -1) do
+    assert_difference('Product.count', +1) do
       delete product_path(products(:ps4))
     end
 

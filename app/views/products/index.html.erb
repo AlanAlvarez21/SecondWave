@@ -22,9 +22,8 @@
 
     <%# Render de las categorías %>
     <div class="flex gap-2 my-4 overflow-x-scroll"> 
-        <%= link_to t('.all'), products_path, class: 'px-4 py-2 text-gray-600 bg-white rounded-2xl drop-shadow-sm hover:bg-gray-300' %>
-
-        <%= render partial: 'category', collection: @categories %>
+        <%= render(CategoryComponent.new) %>
+        <%= render(CategoryComponent.with_collection(@categories)) %>
     </div>
     
      <%# Render de los productos %>
