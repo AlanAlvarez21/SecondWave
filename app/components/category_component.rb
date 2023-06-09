@@ -17,7 +17,7 @@ class CategoryComponent < ViewComponent::Base
   end
 
   def active?
-    return true if !@category && !params[:category_id]
+    return true if !category && !params[:category_id]
 
     category&.id == params[:category_rrid].to_i
   end
