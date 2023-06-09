@@ -142,3 +142,7 @@ en:
       login: 'Access'
       register: 'Register'
       logout: 'Logout'
+  user_mailer:
+    welcome:
+      subject: 'Bienvenido a Vendelo!'
+      welcome_message: "Hey %{username}, welcome to SellIt, we hope you sell a lot!"
