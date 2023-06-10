@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.news
+    @category = Category.new
   end
 
   def edit
