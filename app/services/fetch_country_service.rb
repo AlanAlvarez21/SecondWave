@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+require 'net/http'
+
 # Fetch the user country using the api from the request
 class FetchCountryService
-  require 'net/http'
   attr_reader :ip
 
   def initialize(ip)
