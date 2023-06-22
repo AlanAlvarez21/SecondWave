@@ -30,7 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
-  app_name: Vendelo
+  app_name: 2Wave
   meta_title: Compra y vende articulos de segunda mano
   activerecord:
     models:
