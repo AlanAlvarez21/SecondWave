@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
     product
 
     if @product.update(product_params)
+      notify_all_users
       redirect_to products_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
@@ -67,5 +68,14 @@ class ProductsController < ApplicationController
 
   def product
     @product ||= Product.find(params[:id])
+  end
+
+  def notify_all_users
+    ActionCable.server.broadcast(
+      "product_#{@product.id}",
+      {
+        action: "updated"
+      }
+    )
   end
 end
