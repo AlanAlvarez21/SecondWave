@@ -50,6 +50,9 @@ gem 'bootsnap', '<= 1.13.0', require: false
 # Postgresql fulltextsearch
 gem 'pg_search', '~> 2.3'
 
+# S3 Amazon Storage
+gem 'aws-sdk-s3'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
