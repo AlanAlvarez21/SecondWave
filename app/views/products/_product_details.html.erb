@@ -1,6 +1,31 @@
 <div id="<%= dom_id(product) %>">
-    <%= image_tag product.photo, width: 200 if product.photo.attached? %>
-    <h1 class="title"><%= product.title %></h1>
-    <p><%= product.description %></p>
-    <span><%= product.price %>$</span>
+<div id="<%= dom_id(product) %>" class="flex items-center justify-center">
+  <%= image_tag product.photo.attached? ? product.photo : 'placeholder.png', width: 350, class: 'mt-10' %>
+</div> 
+    <div class="p-4 mt-10 mb-4 bg-white rounded-lg">
+
+  <%= link_to 'Editar Producto', edit_product_path(@product), class: "text-gray-900 hover:text-gray-700" if @product.owner? %>
+
+  <%= link_to '.delete', product_path(@product), data: {
+      turbo_method: :delete,
+      turbo_confirm: t('common.confirm')
+  }, class: "text-red-500 hover:text-red-700" if @product.owner? %>
+
+  <!-- Product info -->
+  <div class="max-w-2xl px-4 pt-10 pb-16 mx-auto">
+    <div class="lg:border-r lg:border-gray-200 lg:pr-8">
+      <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"><%= product.title %></h1>
+      <p class="text-3xl tracking-tight text-gray-900"><span><%= product.price %>$</span></p>
+    </div>
+
+    <!-- Description and details -->
+    <div class="py-10 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+      <h3 class="sr-only">Description</h3>
+      <p class="text-base text-gray-900"> <p><%= product.description %></p></p>
+    </div>
+      <%= render partial: 'favorite', locals: { product: @product } %>
+  <%= turbo_stream_from @product %>
+  </div>
+  
+</div>
 </div>
