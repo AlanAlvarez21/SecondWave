@@ -167,32 +167,32 @@ iphone:
   description: Funciona correctamente.
   price: 400
   category: mobile
-  user: alan
+  user: maria
 
 pixel:
   title: Google Pixel 4
   description: Le falla la batería
   price: 100
   category: mobile
-  user: alan
+  user: maria
 
 surf:
   title: Tabla de surf
   description: Usada dos veces. Como nueva.
   price: 125
   category: sports
-  user: alan
+  user: user4
 
 tennis:
   title: Raqueta de tenis profesional
   description: Fabricada en fibra de carbono. Solo un par de arañazos
   price: 135
   category: sports
-  user: alan
+  user: user4
 
 skate:
   title: Skateboard
   description: Como nuevo con las ruedas recién cambiadas
   price: 75
   category: sports
-  user: alan
+  user: user4
