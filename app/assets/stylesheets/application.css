@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
- */
+/* Neo-brutalism */
+@layer utilities {
+    .neo-brutalism-black {
+      border: 2px solid black;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+  }
+
+/*
