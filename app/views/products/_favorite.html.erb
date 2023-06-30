@@ -1,11 +1,11 @@
 <div id='favorite'>
-    <% if @product.favorite %>
+    <% if product.favorite %>
         <%= link_to favorite_path(product.id), data: { turbo_method: :delete } do %>
-            <%= image_tag('icons/filled_heart.svg', width: 25, height: 25, class: 'stroke-current text-red-800') %>
+            <%= image_tag('icons/filled_heart.svg', width: 40, height: 40, style: "fill: red") %>
         <% end %>
     <% else %>
         <%= link_to favorites_path(product_id: product.id), data: { turbo_method: :post } do %>
-            <%= image_tag('icons/heart.svg', width: 25, height: 25) %>
+            <%= image_tag('icons/heart.svg', width: 40, height: 40) %>
         <% end %>
     <% end %>
 </div>
